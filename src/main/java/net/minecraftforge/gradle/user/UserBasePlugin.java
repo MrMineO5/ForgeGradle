@@ -192,7 +192,7 @@ public abstract class UserBasePlugin<T extends UserBaseExtension> extends BasePl
 
         // run task stuff
         // Add the mod and stuff to the classpath of the exec tasks.
-        final Jar jarTask = (Jar) project.getTasks().getByName("jar");
+        final Jar jarTask = (Jar) project.getTasks().getByName("shadowJar");
 
         if (this.hasClientRun()) {
             JavaExec exec = (JavaExec) project.getTasks().getByName("runClient");

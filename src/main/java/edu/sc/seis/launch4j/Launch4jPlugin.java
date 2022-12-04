@@ -166,7 +166,7 @@ public class Launch4jPlugin implements Plugin<Project> {
     private static CopySpec configureDistSpec(Project project) {
         CopySpec distSpec = project.copySpec(new Closure<Object>(Launch4jPlugin.class) {
         });
-        Jar jar = (Jar) project.getTasks().getByName(JavaPlugin.JAR_TASK_NAME);
+        Jar jar = (Jar) project.getTasks().getByName("shadowJar");
 
         distSpec.from(jar);
         distSpec.from(project.getConfigurations().getByName("runtimeClasspath"));
